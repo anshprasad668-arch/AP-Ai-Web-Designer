@@ -3,7 +3,3 @@ node_modules/
 uploads/*
 generated/*
 .DS_Store
-
-!.env.example
-!uploads/.gitkeep
-!generated/.gitkeep
