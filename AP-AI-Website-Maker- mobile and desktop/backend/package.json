@@ -1,0 +1,14 @@
+{
+  "name": "ap-ai-website-maker",
+  "version": "2.0.0",
+  "description": "AI website builder: form -> Gemini -> visual editor -> ZIP download",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "archiver": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
