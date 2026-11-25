@@ -29,3 +29,30 @@ Generated websites are stored in `backend/data/generated`. On Render instances w
 
 ## Security
 Never commit `.env` or paste your API key into frontend files. Configure `GEMINI_API_KEY` in Render → Environment.
+
+## Generated website data structure
+Every generated website is stored in its own folder:
+
+```text
+backend/data/generated/<project-id>/
+├── project.json       # Internal project metadata (not included in ZIP downloads)
+├── index.html         # Main page
+├── *.html             # Additional pages, when generated
+├── style.css          # Website styling and shared theme
+├── script.js          # Website interactions, when generated
+└── assets/            # Uploaded and editor-replaced images
+```
+
+The editor saves page HTML and shared colour changes to this project folder. Download ZIP exports the website files and assets, ready to upload to a hosting provider.
+
+## Publish a generated website with GitHub Pages
+1. In the editor, choose **⋮ → Download website ZIP**.
+2. Create a new repository at <https://github.com/new>.
+3. Extract the ZIP and upload its contents to the repository root. Ensure `index.html` is at the root.
+4. In the repository, open **Settings → Pages** and select **Deploy from a branch**, branch `main`, folder `/ (root)`, then save.
+5. GitHub displays the public Pages URL after deployment finishes.
+
+The editor's GitHub option opens the new-repository page. Automatic publishing is not enabled; it would require an explicit GitHub OAuth/app integration and permission to publish to an account.
+
+## Mobile / desktop editor
+The editor adapts to phone, tablet and desktop widths. On narrow screens the editing panel starts closed to give the live website the full available width; use the menu/panel button to open editing controls. The three-dot menu includes full-screen preview, project structure, GitHub publishing guidance and ZIP download.
